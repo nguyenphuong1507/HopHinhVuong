@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int max(int, int);
+
+int main()
+{
+	int n;
+	cout << "nhap n: "; cin >> n;
+	int canh_hinh_vuong = n * 2 - 1;
+	int tam_hinh_vuong = canh_hinh_vuong / 2;
+	for (int dong = 0; dong < canh_hinh_vuong; dong++)
+	{
+		for (int cot = 0; cot < canh_hinh_vuong; cot++)
+		{
+			int dong_cach_tam = abs(dong - tam_hinh_vuong);
+			int cot_cach_tam = abs(cot - tam_hinh_vuong);
+			
+			int gia_tri = max(dong_cach_tam, cot_cach_tam);
+			cout << gia_tri + 1;
+		}
+		cout << endl;
+	}
+
+	system("pause");
+	return 0;
+
+}
+
+int max(int x, int y) {
+	if (x > y)
+		return x;
+	else
+		return y;
+}
